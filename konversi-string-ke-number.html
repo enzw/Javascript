@@ -11,6 +11,7 @@
         const variable1 = "1";
         const variable2 = 1;
         const sum = Number(variable1) + variable2;
+        const sum2 = variable1.toString() + variable2.toString()
 
         /*untuk integer bisa parseInt(). 
         untk pecahan parseFloat().
@@ -18,8 +19,19 @@
         untk convert number to string bisa pake number.toString()
         */
 
-        document.writeln(`<p>${sum}</p>`)
+        document.writeln(`<p>${sum}</p>`);
+        document.writeln(`<p>${parseInt("1.1")}</p>`);
+        document.writeln(`<p>${parseFloat("1.1")}</p>`);
 
+        //toString
+        document.writeln(`<p>${variable1.toString()} + ${variable2.toString()} = ${sum2}</p>`);
+
+        //nan kalo didepan ada angka bakal ditolerir (parse int/float)
+        document.writeln(`<p>${parseInt("ups1")}</p>`);
+        document.writeln(`<p>${parseInt("1ups")}</p>`);
+
+        //nan samasekali tidak ditolerir dalam number
+        document.writeln(`<p>${Number("1ups")}</p>`);
     </script>
 </body>
 </html>
