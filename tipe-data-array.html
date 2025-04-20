@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array</title>
+</head>
+<body>
+    <script>
+        let ArrayKosong = [];
+
+        document.writeln("<p>[]" + ArrayKosong)
+
+        //operasi operasi array
+
+        //tambah elemen array
+        ArrayKosong.push("Saskia");
+        ArrayKosong.push("Samsidan", "Paramitha");
+
+        //mengembalikan panjang array 1..n
+        ArrayKosong.length;
+
+        //mengecek index n
+        ArrayKosong[0];
+
+        //mengubah index n (mereplace index 0 ("Saskia") dengan ("Enzokulin"))
+        ArrayKosong[0] = "Enzokulin";
+
+        //hapus index n (tidak menggeser index) /  length tidak berubah
+        //delete ArrayKosong[2];
+
+
+        //menampilkan ke console dalam bentuk table
+        console.table(ArrayKosong);
+
+        document.writeln("<p>" + ArrayKosong[0]);
+        document.writeln("<p>" + ArrayKosong.length);
+    </script>
+</body>
+</html>

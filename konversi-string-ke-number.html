@@ -26,12 +26,22 @@
         //toString
         document.writeln(`<p>${variable1.toString()} + ${variable2.toString()} = ${sum2}</p>`);
 
-        //nan kalo didepan ada angka bakal ditolerir (parse int/float)
+        //NaN kalo didepan ada angka bakal ditolerir (parse int/float)
         document.writeln(`<p>${parseInt("ups1")}</p>`);
         document.writeln(`<p>${parseInt("1ups")}</p>`);
 
-        //nan samasekali tidak ditolerir dalam number
+        //NaN samasekali tidak ditolerir dalam number
         document.writeln(`<p>${Number("1ups")}</p>`);
+
+        //coba kalau variable "salah" to Number (hasilnya NaN) lalu dimasukan operasi aritmatika
+        const first = Number("salah");
+        const totalNumber = first + 100;
+        
+        document.writeln(totalNumber);
+
+        document.writeln("<p>" + isNaN(first));
+
+
     </script>
 </body>
 </html>
