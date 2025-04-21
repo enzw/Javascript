@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>operator in</title>
+</head>
+<body>
+    <script>
+
+        const manusia = {
+            nama : undefined,
+            umur : 21,
+            pacar : "saskia"
+        };
+
+        const result = "nama" in manusia;
+
+        if (result === true) {
+            document.writeln(`ada atribut nama, namanya : ${manusia.nama}`);
+        } else {
+            document.writeln("tidak ada atribut nama");
+        }
+
+
+        
+
+        const name = [null, "enzo", "saskia"];
+
+        let index = 0
+
+        if (index in name) {
+            document.writeln(`<p>ada, isinya : ${name[index]}</p>`);
+        }
+
+    </script>
+</body>
+</html>
