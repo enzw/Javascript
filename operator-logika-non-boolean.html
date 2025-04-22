@@ -8,6 +8,8 @@
 <body>
     <script>
 
+        // Operasi || (OR) 
+
         // let A = 0;
 
         // const B = "B";
@@ -28,6 +30,29 @@
         console.info(null || "NULL"); // "NULL" karena null = falsey
         console.info(undefined || "Undefined"); // "Undefined" karena undefined = falsey
         console.info("" || false); // diambil false yang terakhir
+
+        const person = {
+            nama : "enzo",
+            alamat : "bandung"
+        }
+
+        const name = person.nama || person.alamat;
+        // yang diambil enzo karena sama2 truthy maka yang awal(dari kiri ke kanan) yang diambil
+        console.info(name);
+
+        // Operasi &&(AND)
+
+
+        // selalu yang diambil adalah yang tidak ada valuenya (Falsey)
+        
+        console.info("hello" && ""); // "" karena ""(String kosong) = Falsey
+        console.info("" && []); // "" karena ""(String kosong) = Falsey
+        console.info("0" && "NOL"); // "0" karena sama2 truthy maka ambil yang paling kiri
+        console.info(0 && "NOL"); // 0 karena "0" = Truthy
+        console.info(null && "NULL"); // null karena "NULL" = Truthy
+        console.info(undefined && "Undefined"); // undefined karena "Undefined" = Truthy
+        console.info("NULL" && "Undefined"); // diambil truth yang terakhir
+
 
     </script>
 </body>
