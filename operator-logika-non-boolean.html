@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>operator logika non boolean</title>
+</head>
+<body>
+    <script>
+
+        // let A = 0;
+
+        // const B = "B";
+
+        // if ((A) && (B)) {
+        //     document.writeln("Enzo pacar saskia (True)");
+        // } else {
+        //     document.writeln("Enzo ajah (False)")
+        // }
+
+
+        // selalu yang diambil adalah yang ada valuenya (Truthy)
+
+        console.info("hello" || ""); // "hello"
+        console.info("" || []); // [] (array)
+        console.info("0" || "NOL"); // "0" karena sama2 truthy maka ambil yang paling kiri
+        console.info(0 || "NOL"); // "NOL" karena 0(integer) = falsey
+        console.info(null || "NULL"); // "NULL" karena null = falsey
+        console.info(undefined || "Undefined"); // "Undefined" karena undefined = falsey
+
+    </script>
+</body>
+</html>
