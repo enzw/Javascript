@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>with statement</title>
+</head>
+<body>
+    <script>
+
+        // bypass ke property langsung, namun tidak direkomendasikan bhkan tidak boleh di javascript modern
+        // karena ambiguitas tinggi
+
+        const people = {
+            fisrtName : "enzo",
+            middleName : "A",
+            lastName : "sidan"
+        }
+
+        // console.info(people.fisrtname);
+        // console.info(people.midlename);
+        // console.info(people.lastname);
+
+        // contoh ambiguitas
+
+        const firstName = "wawan";
+
+        with(people) {
+            console.info(fisrtName);
+            console.info(middleName);
+            console.info(lastName);
+        };
+
+    </script>
+</body>
+</html>
