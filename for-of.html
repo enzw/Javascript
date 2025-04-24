@@ -8,7 +8,17 @@
 <body>
     <script>
 
-        
+        // tidak bisa digunakan di objek karena bukan iterable
+
+        const names = ["Enzo" , "Saskia" , "Putri"];
+        for(const index of names){
+            document.writeln(`<p>${index}</p>`);
+        };
+
+        const fullname = "Saskia Samsidan";
+        for(const char of fullname){
+            document.writeln(`<p>${char}`)
+        }
 
     </script>
 </body>
