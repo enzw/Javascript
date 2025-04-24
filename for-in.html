@@ -8,6 +8,8 @@
 <body>
     <script>
 
+        // in = menyimpan index(berapa banyak iterasi sesuai length index array/ property object)
+
         // direkomendasikan digunakan di objek, dan tidak di array
 
         const person = {
@@ -18,6 +20,12 @@
 
         for (const property in person){
             document.writeln(`<p> Property ${property} : ${person[property]}</p>`);
+        };
+
+        const names = ["enzo", "saskia", "putri"];
+
+        for (const nama in names){
+            document.writeln(`<p> nama : ${names[nama]}`);
         };
 
     </script>
