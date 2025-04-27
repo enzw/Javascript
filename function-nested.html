@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>nested function</title>
+</head>
+<body>
+    <script>
+
+        // inner function cuma bisa dipanggil di dalam outer function
+
+        function outer(){
+            function inner(){
+                document.writeln("<p>Inner");
+            };
+
+            inner();
+            inner();
+        };
+
+        outer();
+        inner(); // error
+        document.writeln("<p>Inner"); // ini gak nampil karena error di atas
+    </script>
+</body>
+</html>

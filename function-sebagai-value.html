@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>function sebagai value</title>
+</head>
+<body>
+    <script>
+
+        //memasukan function ke dalam variable
+
+        function sayHello(name){
+            document.writeln( `<p>Hello, ${name}`);
+        };
+
+        sayHello("Enzo");
+
+        let say = sayHello;
+
+        say("Saskia");
+
+        //kirim function ke parameter function lain (pake "callback()")
+
+        function giveMeName(callback){
+            callback("Paramitha"); //sayHello("Paramitha")
+        };
+
+        giveMeName(say); //giveMeName(sayHello)
+
+
+
+    </script>
+</body>
+</html>
