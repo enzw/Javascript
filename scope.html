@@ -19,6 +19,19 @@
         hitMe();
         hitMe();
 
+        // contoh scope dalam nested function, local diatas bisa diakses local dibawah
+
+        function first(){
+            const fisrtVariable = "First";
+
+            function firstNested(){
+                document.writeln(`<p>${fisrtVariable}`);
+            };
+
+            firstNested();
+        }
+
+        first();
     </script>
 </body>
 </html>
