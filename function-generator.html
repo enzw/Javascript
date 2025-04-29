@@ -34,6 +34,20 @@
             document.writeln(`<p>${number}</p>`)
         }
 
+        function buatGanjilArray(value){
+            const result = [];
+            for (let i = 1; i <= value; i++){
+                if (i % 2 === 1){
+                    console.info(`yield ${i}`);
+                    result.push(i);
+                }
+            }
+            return result
+        };
+
+        const numberz = buatGanjilArray(100);
+
+
     </script>
 </body>
 </html>
