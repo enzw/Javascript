@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>closure</title>
+</head>
+<body>
+    <script>
+        // closure membundle fungsi dan variable
+
+        function createAdder(value){
+            const owner = "Enzo";
+            function add(param){
+                // Fungsi add bisa mengakses value dan owner meskipun variabel-variabel itu berada di luar add — inilah yang disebut closure.
+                console.info(owner);
+                return value + param;
+            }
+            return add;
+        }
+        // Fungsi createAdder mengembalikan fungsi add, bukan hasil dari pemanggilannya. Artinya, kamu bisa menyimpan hasil createAdder(...) ke variabel dan memanggilnya nanti.
+
+        const addFive = createAdder(5);  // 'value' jadi 5
+        // seolah2 jadi seperti dibawah
+        // -------------------------------
+        // function add(param){
+        //         console.info("Enzo");
+        //         return 5 + param;
+        // }         
+        // -------------------------------
+        document.writeln(addFive(10));   // owner = "Enzo", return 5 + 10 = 15
+        document.writeln(addFive(4)); 
+
+
+    </script>
+</body>
+</html>
