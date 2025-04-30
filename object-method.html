@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>object method</title>
+</head>
+<body>
+    <script>
+
+        // langsung masukan nama dan method/fungsi ke objek person
+        const person = {
+            name : "Enzo",
+            // sayHello : name => document.writeln(`Hello, ${name}`)
+        }
+
+        document.writeln(`<p>${person.name}<p>`)
+        // person.sayHello("Saskia")
+
+
+        // contoh asign ke person fungsi sayHello
+        person.sayHello = name => document.writeln(`Hello, ${name}`);
+
+        person.sayHello("Saskia")
+
+
+
+    </script>
+</body>
+</html>
