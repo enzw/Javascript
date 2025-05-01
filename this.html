@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>kata kunci this</title>
+</head>
+<body>
+    <script>
+
+        // coba di function biasa
+
+        document.writeln(this);
+
+        function simple (){
+            document.writeln(this);
+            function inner (){
+                document.writeln(`${this}</p>`);
+            }
+            inner();
+        };
+
+        simple()
+
+        // coba di method objek
+
+        const person = {
+            nama : "Enzo",
+            umur : 21,
+            Pacar : "Saskia",
+            // Method : function (name) {
+            //     console.info(this);  muncul si object, bukan window
+            // }
+            // sayHello : (value) => document.writeln(`Hello, ${value}! My name is ${this.nama}`), // gabisa soalnya arrow function
+            sayHello : function (value) {
+                document.writeln(`Hello, ${value}! My name is ${this.nama}`)
+            }
+        }
+
+        person.sayHello("Saskia");
+
+    </script>
+</body>
+</html>
