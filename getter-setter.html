@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>getter setter</title>
+</head>
+<body>
+    <script>
+
+        const person = {
+            firstName: "Saskia",
+            lastName: "Paramitha",
+            get fullName (){
+                return `${this.firstName} ${this.lastName}`
+            },
+            // set setFirstName(firstName){
+            //     this.firstName = firstName
+            // },
+            // set setLastname(lastName){
+            //     this.lastName = lastName
+            // }
+            set fullName(value){
+                const arrayName = value.split(" ");
+                this.firstName = arrayName[0]
+                this.lastName = arrayName[1]
+            }
+        }
+
+        document.writeln(person.fullName);
+        document.writeln("<p>");
+        person.fullName = "Saskia Samsidan"
+        document.writeln(person.fullName);
+
+    </script>
+</body>
+</html>
