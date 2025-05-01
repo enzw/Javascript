@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Masalah variable var</title>
+</head>
+<body>
+    <script>
+
+        // contoh jika menggunakan let
+
+        // let i = 20;
+
+        // for (let i = 1 ; i <= 10; i++){
+        //     console.info(`ini lokal ${i}`);
+        // }
+
+        // console.info(`ini global ${i}`) // i = 20 karena scope let itu sesuai declare dimana
+
+        // contoh jika gunakan var
+
+        var i = 20;
+
+        for (var i = 1 ; i <= 10; i++){
+            console.info(`ini lokal ${i}`);
+        }
+
+        console.info(`ini global ${i}`) // i = 11 karena var scopenya nyaru global dan local
+    </script>
+</body>
+</html>
