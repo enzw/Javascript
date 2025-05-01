@@ -10,12 +10,16 @@
 
         const person = {
             name : "Enzo",
-            sayHello : function (value){
+            // sayHello : function (value){
+            //     document.writeln(`Hello ${value}! My name is ${this.name}`)
+            // }
+            // this di arrow function mengacu ke window bukan object
+            sayHello : (value) => {
                 document.writeln(`Hello ${value}! My name is ${this.name}`)
             }
         }
 
-        person.sayHello();
+        person.sayHello("Saskia");
 
     </script>
 </body>
