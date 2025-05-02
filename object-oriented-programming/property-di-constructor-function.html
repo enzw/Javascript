@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>constructor function</title>
+</head>
+<body>
+    <script>
+        // constructor function(class versi js) dinamai dengan awalan huruf besar
+        function Person () {
+            // property/attribute
+            this.firstName = "";
+            this.lastName = "";
+
+            
+        }
+
+        // membuat object (new xclass();)
+        const enzo = new Person();
+        enzo.firstName = "Enzo";
+        enzo.lastName = "Samsidan";
+
+        const saskia = new Person();
+        saskia.firstName = "Saskia";
+        saskia.lastName = "Samsidan";
+
+        console.info(enzo);
+        console.info(saskia);
+
+
+
+    </script>
+</body>
+</html>
