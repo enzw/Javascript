@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>String Template</title>
+</head>
+<body>
+    <script>
+        //kuncinya pake ` bukan '
+
+        const name = "Enzokulin Samsidan";
+        const nilai = 80;
+        const Template = `Name : ${name}, lulus : ${nilai>70}`;
+        const multiline = `Enzokulin Samsidan
+adalah seorang yang kaya dan sukses
+dimasa depan`
+
+        //jadul
+        //const jadul = 'Name : ' + name;
+
+        document.writeln(Template);
+
+        document.writeln("<pre>")
+        document.writeln(multiline);
+        document.writeln("</pre>")
+    </script>
+</body>
+</html>
