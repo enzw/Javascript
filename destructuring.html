@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>destructuring</title>
+</head>
+<body>
+    <script>
+
+        // ========================================================
+
+        {
+        // Destructuring array
+        const names = ["Enzo", "Samsidan", "Saskia", "Putri", "Paramitha"];
+
+        const [firstName, middleName, lastName, ...others] = names;
+
+        console.info(firstName);
+        console.info(others);
+        }
+
+        // ========================================================
+
+        {
+        // Destructuring object
+        const person = {
+            firstName : "Enzo",
+            lastName : "Samsidan",
+            address : {
+                street : "Jalan kgk",
+                city : "Bandung",
+                country : "Indonesia"
+            },
+            hobby : "Loving and Caring",
+            girlFriend : "Saskia Putri Paramitha"
+        };
+
+        // mendukung destructuring nested object, misal address disini
+
+        const {firstName, lastName, address : {street, city, country}, ...others} = person;
+
+        console.info(street);
+        console.info(others);
+        }
+
+        // ========================================================
+
+        {
+        // Destructuring paramether
+        function displayPerson({firstName, middleName, lastName}){
+            console.info(firstName);
+            console.info(middleName);
+            console.info(lastName);
+        }
+
+        const person = {
+            firstName : "Enzo",
+            middleName : "Paramitha",
+            lastName : "Samsidan",
+        }
+
+        displayPerson(person);
+        }
+
+        // ========================================================
+
+        {
+        // function sum(array){
+        //     return array[0] + array[1];
+        // };
+
+        // console.info(sum([1,1]));
+
+        function sum([first, second]){
+            return first + second;
+        };
+
+        console.info(sum([1,1]));
+        }
+
+        // ========================================================
+
+        {
+        // Default value destructuring array
+        const name = ["Saskia", "Putri"];
+        const [firstName, middleName, lastName = "Samsidan"] = name;
+        
+        // mencoba memberikan nilai default untuk array
+        console.info(firstName);
+        console.info(middleName);
+        console.info(lastName);
+        }
+
+        // ========================================================
+
+        {
+        // Destructuring object
+        const person = {
+            firstName : "Enzo",
+            middleName : "Paramitha",
+            lastName : "Samsidan",
+            address : {
+                street : "Jalan kgk",
+                city : "Bandung",
+                country : "Indonesia"
+            },
+            hobby : "Loving and Caring",
+            girlFriend : "Saskia Putri Paramitha"
+        };
+
+        // mendukung destructuring nested object, misal address disini
+
+        // mencoba memberikan nilai default untuk object
+        // menggunakan nama variable dari property object (contoh nama tengah untuk middle name)
+
+        const {
+            firstName, 
+            middleName : namaTengah = "Paramitha", 
+            lastName, 
+            address : {street, city, country}, 
+            ...others} = person;
+
+        console.info(firstName);
+        console.info(namaTengah);
+        console.info(lastName);
+        console.info(street);
+        console.info(others);
+        }
+
+    </script>
+</body>
+</html>
