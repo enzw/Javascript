@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>prototype</title>
+</head>
+<body>
+    <script>
+
+
+        // Prototype bisa dilihat di inspect (property paling bawah dalam objek)
+        function Person () {
+            this.firstName = "";
+            this.lastName = ""; 
+        }
+
+        // kita akan tambah property objek prototypenya si Person
+        // kalau ada 2 fungsi yang bernama sama namun salah satunya ada di proto dan ada di objek utama maka yang dipake yang di objek utama
+        Person.prototype.sayBye = function (){
+            console.info(`Bye, ${this.firstName}`)
+        }
+
+        // kalau kita tambah property enzo maka saskia tidak berubah, tapi kalo prototype dari Person yang diubah maka prototype enzo dan saskia berubah
+        const enzo = new Person();
+        enzo.firstName = "Enzo";
+        enzo.lastName = "Samsidan";
+        enzo.sayHello = function(nama){
+            console.log(`Hello, ${firstName}! My name is ${nama}`)
+        }
+
+        const saskia = new Person();
+        saskia.firstName = "Saskia";
+        saskia.lastName = "Samsidan";
+
+        console.info(enzo);
+        console.info(saskia);
+
+        // misal kita panggil yang di proto maka bisa, tapi dia ambil dari protonya bukan dari object/instan "enzo"
+        enzo.sayBye();
+
+    </script>
+</body>
+</html>
