@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>constructor function</title>
+</head>
+<body>
+    <script>
+        // constructor function(class versi js) dinamai dengan awalan huruf besar
+        function Person () {
+            // property/attribute
+            this.firstName = "";
+            this.lastName = "";
+            // method/fungsi dalam class
+            this.sayHello = function sayHello(value){
+                console.info(`Hello, ${this.firstName} ${this.lastName}! My name is ${value}`)
+            }
+        }
+
+        // membuat object (new xclass();)
+        const enzo = new Person();
+        enzo.firstName = "Enzo";
+        enzo.lastName = "Samsidan";
+
+        //memanggil method
+        enzo.sayHello("Saskia");
+
+        // membuat object (new xclass();)
+        const saskia = new Person();
+        saskia.firstName = "Saskia";
+        saskia.lastName = "Samsidan";
+        saskia.sayHello("Enzo");
+
+        console.info(enzo);
+        console.info(saskia);
+
+
+
+    </script>
+</body>
+</html>
