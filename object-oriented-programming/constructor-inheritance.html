@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>constructor function</title>
+</head>
+<body>
+    <script>
+        // Seolah2 inheritance tapi sebenarnya ini cuma copy dari "parentnya"
+        function Employee(firstName){
+            this.firstName = firstName;
+            this.sayHello = function (name){
+                console.info(`Hello, ${firstName}! My name is ${name}`);
+            };
+        };
+
+        // mengambil semua property dari Employee
+        function Manager(firstName, lastName){
+            Employee.call(this, firstName);
+            this.lastName = lastName;
+        }
+
+        // coba membuat manager baru
+        const Enzo = new Manager("Enzo", "Samsidan");
+        console.info(Enzo);
+
+    </script>
+</body>
+</html>
