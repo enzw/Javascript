@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>class Method</title>
+</head>
+<body>
+    <script>
+
+        class Person {
+            constructor(name){
+                this.name = name;
+            }
+
+            // ketika bikin method di person bukan di constructor maka masuk ke prototype bukan ke object instans
+            sayHello(value) {
+                console.info(`Hello, ${this.name}! My name is ${value}`);
+            }
+        }
+
+        const enzo = new Person("enzo");
+        const saskia = new Person("saskia");
+        
+        console.info(enzo);
+        console.info(enzo.name);
+        enzo.sayHello("Saskia");
+        saskia.sayHello("Enzo");
+        console.info(saskia);
+
+    </script>
+</body>
+</html>
