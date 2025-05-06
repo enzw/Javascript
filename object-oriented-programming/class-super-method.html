@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>class super method(inheritance)</title>
+</head>
+<body>
+    <script>
+
+        class Employee {
+            constructor (name, id){
+                this.name = name;
+                this.id =id;
+            } 
+
+            getName(){
+                return this.name;
+            }
+
+            setName(name){
+                this.name = name;
+            }
+
+            getId(){
+                return this.id;
+            }
+
+            setId(id){
+                this.id = id;
+            }
+
+            sayHello(value){
+                console.log(`Hello, ${value}! My name is ${this.getName()} and my id is = ${this.getId()}`)
+            }
+        }
+
+        class Manager extends Employee{
+            // super constructor
+            constructor(name, id, anggota){
+                super(name,id);
+                this.anggota = anggota;
+            }
+
+            // super method
+            sayHello(value){
+                super.sayHello(value);
+                console.log(`Aku adalah manager disini, ${value}`);
+            }
+        }
+
+        const saskia  = new Employee("Saskia", "300905");
+        console.log(saskia);
+        const enzo = new Manager("Enzo", "120804", ["Saskia", "Putri", "Paramitha"]);
+        console.log(enzo);
+        enzo.sayHello("Saskia");
+
+    </script>
+</body>
+</html>
