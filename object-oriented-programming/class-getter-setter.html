@@ -15,17 +15,30 @@
             }
 
             get fullName(){
-                return `${this.firstName} + ${this.lastName}`;
+                return `${this.firstName} ${this.lastName}`;
             }
 
-            set firstName(firstName){
-                this.firstName = firstName;
-            }
+            // set firstName(firstName){
+            //     this.firstName = firstName;
+            // }
 
-            set firstName(lastName){
-                this.lastName = lastName;
+            // set firstName(lastName){
+            //     this.lastName = lastName;
+            // }
+
+            set fullName(value){
+                const Name = value.split(" ");
+                this.firstName = Name[0];
+                this.lastName = Name[1];  
             }
         }
+
+        const enzo = new person("Enzokulin", "Samsidan");
+        console.info(enzo);
+        console.info(enzo.fullName);
+        enzo.fullName = "Saskia Paramitha";
+        console.info(enzo);
+
 
     </script>
 </body>
