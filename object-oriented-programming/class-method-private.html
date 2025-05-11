@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>class method private</title>
+</head>
+<body>
+    <script>
+
+        class Person {
+            // #name;
+
+            // constructor(name){
+            //     this.#name = name;
+            // }
+
+            say(name){
+                if(name){
+                    this.#sayWithName(name)
+                } else {
+                    this.#sayWithoutName()
+                }
+            }
+
+            #sayWithoutName(){
+                console.info(`Hello, anonymous!`)
+            }
+
+            #sayWithName(name){
+                console.info(`Hello, ${this.name}!`)
+            }
+
+        }
+
+        const saskia = new Person;
+        saskia.name = "Saskia";
+        saskia.say();
+        saskia.say("Saskia")
+        // saskia.#sayWithName();
+
+    </script>
+</body>
+</html>
