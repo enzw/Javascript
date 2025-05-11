@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Operator instanceof</title>
+</head>
+<body>
+    <script>
+
+        class Employee{
+
+        }
+
+        class Manager{
+
+        }
+
+        const enzo = new Manager();
+        const saskia = new Employee();
+
+        // console.info(typeof enzo); output = object, tidak tau instance ini class apa
+        // console.info(typeof saskia); output = object, tidak tau instance ini class apa
+
+        console.info(enzo instanceof Manager); // hasilnya boolean
+        console.info(enzo instanceof Employee);
+
+        console.info(saskia instanceof Manager);
+        console.info(saskia instanceof Employee);
+
+    </script>
+</body>
+</html>
