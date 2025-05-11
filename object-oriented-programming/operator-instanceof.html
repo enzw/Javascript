@@ -19,14 +19,15 @@
         const enzo = new Manager();
         const saskia = new Employee();
 
-        // console.info(typeof enzo); output = object, tidak tau instance ini class apa
-        // console.info(typeof saskia); output = object, tidak tau instance ini class apa
+        // console.info(typeof enzo); output = object, tidak tau instance ini classnya apa
+        // console.info(typeof saskia); output = object, tidak tau instance ini classnya apa
 
-        console.info(enzo instanceof Manager); // hasilnya boolean
-        console.info(enzo instanceof Employee);
+        console.info(enzo instanceof Manager); // hasilnya boolean (true)
+        console.info(enzo instanceof Employee); // hasilnya boolean (false)
 
-        console.info(saskia instanceof Manager);
-        console.info(saskia instanceof Employee);
+        console.info(saskia instanceof Manager); // hasilnya boolean (false)
+        console.info(saskia instanceof Employee); // hasilnya boolean (true)
+
 
     </script>
 </body>
