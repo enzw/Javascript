@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>class static field</title>
+</head>
+<body>
+    <script>
+
+        // property(field) biasa, field didalamnya masuk ke instance
+        // class Configuration {
+
+        //     name = "Belajar Javascript OOP";
+        //     version = "2.0.25";
+        //     author = "Enzokulin Samsidan";
+
+        // }
+
+        // property(field) static, field didalamnya tidak masuk ke instance. coba inspect aja
+        class Configuration {
+
+            static name = "Belajar Javascript OOP";
+            static version = "2.0.25";
+            static author = "Enzokulin Samsidan";
+
+        }
+
+
+        const config = new Configuration;
+        console.info(config);
+
+        // coba akses config.name
+        console.info(config.name); // undefined
+
+        // aksesnya ke class baru bisa
+        console.info(Configuration.name);
+        console.info(Configuration.version);
+        console.info(Configuration.author);
+
+
+    </script>
+</body>
+</html>
