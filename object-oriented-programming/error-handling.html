@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>error</title>
+</head>
+<body>
+    <script>
+
+        class MathUtil {
+
+            static sum( ...numbers){
+                if (numbers.length === 0){
+                    throw new Error("Tidak ada nilai untuk dijumlahkan");  
+                } else {
+                    let total = 0;
+                    for (const number of numbers) {
+                        total += number;
+                    }
+                    return total;
+                }
+            }
+
+        }
+
+
+        try {
+            
+        } catch (error) {
+            
+        }
+
+        const hasil = MathUtil.sum(); // keluar error
+        // const result = MathUtil.sum(0); // hasilnya 0
+
+        // console.info(result);
+        console.info(hasil);
+    </script>
+</body>
+</html>
