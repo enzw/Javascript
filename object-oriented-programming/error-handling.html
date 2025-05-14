@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>error</title>
+    <title>error handling</title>
 </head>
 <body>
     <script>
@@ -26,16 +26,17 @@
 
 
         try {
-            
+            console.info(MathUtil.sum(1,1))
+            console.info(`dia mengeksekusi sampai sini`) // tidak sampai catch
         } catch (error) {
-            
+            console.info(`terjadi error : ${error.message}`);
         }
 
-        const hasil = MathUtil.sum(); // keluar error
-        // const result = MathUtil.sum(0); // hasilnya 0
+        // const hasil = MathUtil.sum(); // keluar error
+        // // const result = MathUtil.sum(0); // hasilnya 0
 
-        // console.info(result);
-        console.info(hasil);
+        // // console.info(result);
+        // console.info(hasil);
     </script>
 </body>
 </html>
