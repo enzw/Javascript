@@ -26,10 +26,12 @@
 
 
         try {
-            console.info(MathUtil.sum(1,1))
-            console.info(`dia mengeksekusi sampai sini`) // tidak sampai catch
+            console.info(MathUtil.sum())
+            console.info(`dia mengeksekusi sampai sini aja tidak sampai catch`); // tidak sampai catch
         } catch (error) {
-            console.info(`terjadi error : ${error.message}`);
+            console.info(`terjadi error : ${error.message}`); // catch cuma dieksekusi ketika terjadi error
+        } finally {
+            console.info("program selesai"); // tetap diekseskusi tidak peduli error atau tidak
         }
 
         // const hasil = MathUtil.sum(); // keluar error
@@ -37,6 +39,31 @@
 
         // // console.info(result);
         // console.info(hasil);
+
+        console.info("contoh diluar error handling");
+
+
+        // contoh try-finally
+
+        class Counter {
+            #counter = 0;
+
+            next(){
+                // return this.#counter;
+                // this.#counter ++;        // karena diatas ada return maka this.#counter++ tidak dieksekusi
+                try {
+                    return this.#counter;
+                } finally {
+                    this.#counter ++;
+                }
+            }
+        }
+
+        const hitung = new Counter;
+        hitung.next()
+        console.info(hitung.next());
+
+        
     </script>
 </body>
 </html>
