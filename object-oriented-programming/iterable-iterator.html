@@ -11,7 +11,7 @@
         class CounterIteratorResult {
 
             constructor(done, value){
-                done = false;
+                this.done = done;
                 this.value = value
             }
 
@@ -27,14 +27,32 @@
             next(){
                 try {
                     if(this.value > this.max){
-                        return
+                        return new CounterIteratorResult(true, this.value);
                     } else {
-                        return 
+                        return new CounterIteratorResult(false, this.value);
                     }
                 } finally {
                     this.value++;
                 }
             }
+        }
+
+        class CounterIterable {
+            
+            constructor(value, max){
+                this.value = value;
+                this.max = max;
+            }
+
+            [Symbol.iterator](){
+                return new CounterIterator(this.value, this.max);
+            }
+        }
+
+        const counter = new CounterIterable(1, 10)
+
+        for (const value of counter) {
+            console.log(value);
         }
 
     </script>
