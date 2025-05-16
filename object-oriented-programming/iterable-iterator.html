@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>iterable iterator</title>
+</head>
+<body>
+    <script>
+
+        class CounterIteratorResult {
+
+            constructor(done, value){
+                done = false;
+                this.value = value
+            }
+
+        }
+
+        class CounterIterator{
+            
+            constructor(value, max) {
+                this.value = value;
+                this.max = max;
+            }
+
+            next(){
+                try {
+                    if(this.value > this.max){
+                        return
+                    } else {
+                        return 
+                    }
+                } finally {
+                    this.value++;
+                }
+            }
+        }
+
+    </script>
+</body>
+</html>
