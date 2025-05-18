@@ -25,6 +25,25 @@
         console.info(Number.MAX_VALUE);
         console.info(Number.MIN_SAFE_INTEGER);
         console.info(Number.MAX_SAFE_INTEGER);
+        console.info(Number.NaN);
+
+        // static method number
+
+        const data = 123;
+        console.info(Number.isNaN(data));
+        console.info(Number.isInteger(data));
+        console.info(Number.isFinite(data));
+
+        // instance method number
+
+        const value = Number("12345");
+        // ubah ke biner(basis 2 (1/0))
+        console.info(value.toString(2));
+        // ubah ke format indo (12.345)
+        console.info(value.toLocaleString("id-ID"));
+        // ubah ke format USA (12,345)
+        console.info(value.toLocaleString("en-US"));
+
 
     </script>
 </body>
