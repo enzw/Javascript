@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>array</title>
+</head>
+<body>
+    <script>
+        {
+            // array loop
+            console.log("array loop \n");
+
+            const array = ["Enzo", "Saskia", "Paramitha"];
+
+            // value selalu ada di kiri dalam function
+            // array.forEach(function(value, index){
+            //     console.log(`${index} : ${value}`);
+            // });
+
+            array.forEach((value, index) => {
+                console.log(`${index} : ${value}`)
+            });
+
+            array.forEach(value => {
+                console.log(`${value}`)
+            });
+        }
+
+        {
+            // array queue(First In First Out)
+            console.log("\n array queue \n");
+
+            const array = ["Enzo", "Saskia", "Paramitha"];
+
+            array.push("Samsidan"); // masukin di belakang
+            array.shift();          // hapus paling depan
+            
+            array.forEach(value => {
+                console.log(`${value}`);
+            });
+
+        }
+        
+        {
+            // array stack (Last In First Out)
+            console.log("\n array queue \n");
+
+            const array = ["Enzo", "Saskia", "Paramitha"];
+
+            array.push("Samsidan"); // masukin di belakang
+            array.push("Putri");
+            array.pop();          // hapus paling belakang
+            
+            array.forEach(value => {
+                console.log(`${value}`);
+            });
+        }
+
+        {
+            // array search
+            console.log("\n array search \n")
+
+            const array = ["Enzo", "Saskia", "Paramitha", "Saskia"];
+            const angka = [1,2,3,4,5,6,7,8];
+
+            console.info(array.find(value => value === "Saskia")); // Saskia
+            console.info(angka.find(value => value > 3)); // 4
+
+            console.info(array.findIndex(value => value === "Paramitha")); // index 2
+            console.info(array.includes("Samsidan")); // false karena "Samsidan" tidak ada dalam array
+            console.info(array.indexOf("Saskia")); // 1 (dia ambil "Saskia" yang pertama)
+            console.info(array.lastIndexOf("Saskia")); // 3 (dia ambil "Saskia" yang terakhir) 
+        }
+
+        {
+            // array filter
+            console.log("\n array filter \n");
+            
+            const array = [1,2,3,4,5,6,7,8,9,10];
+
+            console.info(array);
+            console.info(array.filter(value => value % 2 === 1)); // filter angka ganjil
+            console.info(array.filter(value => value % 2 === 0)); // filter angka genap
+        }
+
+        {
+            // array transform
+            console.log("\n array transform \n");
+
+            const array = "Enzokulin Samsidan Saskia Paramitha".split(" ");
+
+            const upperCase = array.map(value => value.toUpperCase());
+            console.info(upperCase); // ["ENZOKULIN", "SAMSIDAN", "SASKIA" ...]
+
+            const reduce = array.reduce((x, y) => x + " " + y); // x = value index, y = value index + 1
+            console.info(reduce); // "Enzokulin Samsidan Saskia Paramitha"
+
+            const reduceRight = array.reduceRight((x, y) => x + " " + y);
+            console.info(reduceRight); // "Paramitha Saskia Samsidan Enzokulin"
+
+            const numbers = [1,2,3,4,5,6,7,8,9];
+            const total = numbers.reduce((x,y) => x + y); // 1 + 2 + ... + 9
+            console.info(total); // 45
+        }
+        
+
+
+    </script>
+</body>
+</html>
