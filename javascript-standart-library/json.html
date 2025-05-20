@@ -18,7 +18,7 @@
             hobbies : ["Gaming", "Playing Guitar", "Loving Saskia"]
         }
 
-        const json = JSON.stringify(person); // merubah objek person ke format JSON (bisa ke bentuk array juga kasih [] di dalam ())
+        const json = JSON.stringify(person); // merubah objek person ke format JSON ( gak cuma objek, input bisa juga array)
         const personAgain = JSON.parse(json); // mengembalikan objek person(JSON) ke objek javascript lagi
 
         console.info(json);
