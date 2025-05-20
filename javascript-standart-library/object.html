@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Object</title>
+</head>
+<body>
+    <script>
+
+    {
+        // freeze object
+        const person = {
+            firstName : "Saskia",
+            lastName : "Samsidan"
+        };
+
+        Object.freeze(person); // data dalam property tidak dapat diubah
+
+        person.firstName = "Paramitha"; // tidak merubah data dalam property karena sudah di freeze
+        delete person.lastName;
+
+        console.info(person);
+    }
+
+    {
+        // seal object
+        const person = {
+            firstName : "Saskia",
+            lastName : "Samsidan"
+        };
+
+        Object.seal(person); // data dalam property dapat diubah namun property tidak dapat ditambah/dihapus
+
+        person.lastName = "Paramitha"; // bisa diganti
+        delete person.lastName; // tidak bisa dihapus property
+        person.middleName = "Samsidan"; // tidak bisa tambah property
+
+        console.info(person);
+    }
+
+    {
+        // object assign
+        const target = {
+            firstName : "Saskia"
+        };
+
+        const source = {
+            lastName : "Samsidan"
+        };
+
+        // hanya target yang akan berubah
+        Object.assign(target, source); // target di kiri, source di kanan 
+        console.info(target); // kalau ada atribut yang sama di target maka akan ditimpa property dari source
+    }
+
+    {
+        // get object values & property
+        const person = {
+            firstName : "Saskia",
+            lastName : "Samsidan"
+        };
+
+        console.info(Object.getOwnPropertyNames(person)); //  output = array nama2 property object person
+        console.info(Object.values(person)); //  output = array isi2 property object person
+    }
+    </script>
+</body>
+</html>
