@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>map</title>
+</head>
+<body>
+    <script>
+
+        // const map = new Map();
+
+        // // map.set(key, value);
+        // map.set("a", 1);
+        // map.set("b", 2);
+        // map.set("c", 3);
+
+        // console.log(map.get("a"));
+
+        // // timpa dengan nilai baru di key "a"
+        // map.set("a", 98);
+
+        // console.log(map.get("a"));
+
+        // //panjang map
+        // console.log(map.size);
+
+        const personMap = new Map();
+
+        personMap.set("Name", "Enzokulin Samsidan");
+        personMap.set("Address", "Yogyakarta");
+
+        console.info(personMap);
+        console.info(personMap.get("Name"));
+        console.info(personMap.get("Address"));
+        console.info(personMap.get("Hobby")); // undefined karena gada key Hobby di personMap
+
+        for (const element of personMap){
+            console.info(`${element[0]} : ${element[1]}`);
+        };
+
+        personMap.forEach((value, key) => console.info(`${key} : ${value}`));
+
+    </script>
+</body>
+</html>
