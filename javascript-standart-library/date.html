@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>date</title>
+</head>
+<body>
+    <script>
+        // create date
+        const date1 = new Date();
+        
+        // index bulan mulai dari 0, tanggal dari 1
+        const date2 = new Date(2005, 8, 30);
+
+        // full timestamp dari year sampai milisecond
+        const date3 = new Date(2005, 8, 30, 1, 0, 0, 0);
+
+        // date dari milisecond
+        // cek milisecond sekarang di https://currentmillis.com/
+        const date4 = new Date(1747798890016);
+
+        console.info(date1);
+        console.info(date2);
+        console.info(date3);
+        console.info(date4);
+
+        // ========================================================================
+
+        // unix & epoch timestamp(pakai milisecond)
+
+        // ambil timestamp(milisecond) saat ini
+        const timestamp = Date.now();
+        
+        // buat date dari timestamp(milisecond)
+        const dateUnix = new Date(timestamp);
+
+        console.log(timestamp);
+        console.log(dateUnix);
+
+        // pakai method getTime()
+        console.info(date1.getTime());
+        
+        // epoch timestamp itu udah standart jadi misal pindah ke bahasa lain gampang
+
+        // ========================================================================
+
+        // parsing date (ganti format seperti json ke objek)
+        // format penuh YYYY-MM-DDTHH:mm:ss.sssZ Z(timezone)
+        // bisa YYYY-MM-DD
+
+        const parseTimeStamp = Date.parse("2005-09-30T08:08:08.123+07:00");
+        console.info(parseTimeStamp);
+
+        const date = new Date(parseTimeStamp);
+        console.info(date); 
+
+        // =======================================================================
+
+        // date getter setter
+        const tanggal = new Date();
+        date.setFullYear(2020);
+
+        console.info(tanggal.getFullYear());
+        console.info(tanggal.getMonth());
+        console.info(tanggal.getDate());
+        console.info(tanggal.getHours());
+        console.info(tanggal.getMinutes());
+        console.info(tanggal.getSeconds());
+        console.info(tanggal.getMilliseconds());
+        console.info(tanggal.getTimezoneOffset());
+
+        // setternya eksplor sendiri
+        
+    </script>
+</body>
+</html>
