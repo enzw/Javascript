@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Set</title>
+</head>
+<body>
+    <script>
+
+        const set = new Set();
+
+        set.add("Enzokulin");
+        set.add("Samsidan");
+        set.add("Saskia");
+        set.add("Saskia"); // yang kesimpen satu saskia doang
+
+        console.log(set);
+
+        set.forEach((value) => console.info(`value : ${value}`));
+
+    </script>
+</body>
+</html>
