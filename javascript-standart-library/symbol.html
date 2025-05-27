@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Symbol</title>
+</head>
+<body>
+    <script>
+        // const firstName = Symbol("desc");
+        // const lastName = Symbol("desc");
+
+        // console.info(firstName === lastName); //hasilnya false karena ya beda walau desc(deskirpsi symbol) sama
+
+        {
+            // new Symbol maka pasti beda walau desc sama
+            const firstName = Symbol("firstName");
+            const lastName = Symbol("lastName");
+
+            const person = {};
+
+            person[firstName] = "Enzo";
+            person[lastName] = "Samsidan";
+
+            console.log(person);
+        }
+
+        {
+            // Symbol.for desc dibelakang jadi key / unique tidak boleh sama antar symbol
+
+            console.log(Symbol.for("SaskiaJelek") === Symbol.for("SaskiaJelek")); // true, karena key("deskripsi") sama
+
+            const person = {};
+
+            person[Symbol.for("firstName")] = "Enzo";
+            person[Symbol.for("lastName")] = "Samsidan";
+
+            console.log(person);
+            console.log(person[Symbol.for("firstName")]);
+            console.log(person[Symbol.for("lastName")]);
+        }
+
+    </script>
+</body>
+</html>
