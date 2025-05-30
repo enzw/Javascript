@@ -8,19 +8,65 @@
 <body>
     <script>
 
-        // regexp buat mencari kata tertentu(case sensitive)
-        let regexp = /Samsidan/;
-        let regexp1 = new RegExp("enzo");
-        let regexp2 = new RegExp(/enzo/);
+        {
+            // regexp buat mencari kata tertentu(case sensitive)
+            let regexp = /Samsidan/;
+            let regexp1 = new RegExp("enzo");
+            let regexp2 = new RegExp(/enzo/);
 
-        // test regexp
-        const name = "Enzo Kulin Samsidan";
+            // test regexp
+            const name = "Enzo Kulin Samsidan";
 
-        const result = regexp.exec(name); // output berbentuk array
-        console.info(result);
-        
-        const test = regexp.test(name);
-        console.info(test);
+            const result = regexp.exec(name); // output berbentuk array
+            console.info(result);
+            
+            const test = regexp.test(name);
+            console.info(test);
+        }
+
+        {
+            // incase sensitive
+            let regexp = /Samsidan/i;
+            // let regexp = new RegExp("Samsidan", "i");
+
+            const name = "enzo kulin samsidan";
+
+            const result = regexp.exec(name); // output berbentuk array
+            console.info(result);
+        }
+
+        {
+            // cari keseluruhan data(global), stop ketika ketemu di data pertama
+            let regexp = /Paramitha/g;
+            // let regexp = new RegExp("Paramitha", "g");
+
+            const name = "enzo kulin Paramitha \n Paramitha"; // stop di paramitha pertama
+
+            const result = regexp.exec(name); // output berbentuk array
+            console.info(result);
+        }
+
+        {
+            // gabungan i dan g
+            let regexp = /Paramitha/ig; // tanpa g maka looping infinit
+            // let regexp = /^Paramitha/igm; // ^untuk mencari kata di awal kalimat, m untuk mencari di tiap baris
+            // let regexp = new RegExp("Paramitha", "ig");
+
+            const name = "enzo kulin Paramitha \n Paramitha"; // stop di paramitha pertama
+
+            let result;
+            while((result = regexp.exec(name)) !== null){
+                console.info(result);
+            }
+
+            // sebenernya ad 1 lagi operasi m(multi line / ada enter)
+        }
+
+        {
+            
+        }
+
+
     </script>
 </body>
 </html>
