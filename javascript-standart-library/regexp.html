@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>regexp</title>
+</head>
+<body>
+    <script>
+
+        // regexp buat mencari kata tertentu(case sensitive)
+        let regexp = /Samsidan/;
+        let regexp1 = new RegExp("enzo");
+        let regexp2 = new RegExp(/enzo/);
+
+        // test regexp
+        const name = "Enzo Kulin Samsidan";
+
+        const result = regexp.exec(name); // output berbentuk array
+        console.info(result);
+        
+        const test = regexp.test(name);
+        console.info(test);
+    </script>
+</body>
+</html>
