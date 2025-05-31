@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>proxy</title>
+</head>
+<body>
+    <script>
+
+        const target = {}
+
+        const handler = {
+            get : function(target, property){
+                console.log(`access property : ${property}`);
+                return target[property];
+            },
+
+            set : function(target, property, value){
+                console.log(`change property : ${property} to ${value}`);
+                if(value === null){
+                    throw new Error("tidak boleh null"); // eksepsi/validasi biar gaboleh null value nya
+                } else {
+                    target[property] = value;
+                }
+            }
+        };
+
+        const proxy = new Proxy(target, handler);
+
+        proxy.firstName = "Saskia";
+        proxy.lastName = "Samsidan";
+
+        console.log(proxy.firstName);
+        console.log(proxy.lastName);
+        console.log(target);
+    </script>
+</body>
+</html>
