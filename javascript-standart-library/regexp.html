@@ -47,7 +47,7 @@
         }
 
         {
-            // gabungan i dan g
+            // gabungan i dan g (regexp modifier)
             let regexp = /Paramitha/ig; // tanpa g maka looping infinit
             // let regexp = /^Paramitha/igm; // ^untuk mencari kata di awal kalimat, m untuk mencari di tiap baris
             // let regexp = new RegExp("Paramitha", "ig");
@@ -63,7 +63,25 @@
         }
 
         {
-            
+            // advance regexp
+            const regexp = /enz[aiueo]/ig
+
+            const name = "Enzo enzi ENzu EnZa enZE"
+
+            let result;
+            while((result = regexp.exec(name)) !== null){
+                console.info(result);
+            }
+        }
+
+        {
+            const name = "wawan Enzo enzi ENzu EnZa enZE"
+
+            console.info(name.match(/enz[aiueo]/ig));
+            console.info(name.search(/enz[aiueo]/ig));
+            console.info(name.replace(/enz[aiueo]/i, "Saskia")); // pake modifier g maka keubah semua, kalo gak global maka cuma replace 1 pertama
+            console.info(name.replaceAll(/enz[aiueo]/ig, "Saskia")); // replace all harus pake g
+            console.info(name.split(/ /ig)); // split pake "/ /" (spasi)
         }
 
 
